@@ -31,7 +31,7 @@ namespace Restaurant.Core
         private List<Order> FillOrders()
         {
             string path = MyFile.GetFullNameInApplicationTree("Tasks.csv");
-            string[] lines = File.ReadAllLines(path, Encoding.UTF8);
+            string[] lines = File.ReadAllLines(path, Encoding.Default);
             List<Order> result = new List<Order>();
 
             for(int i = 1; i < lines.Length; i++)
@@ -60,7 +60,7 @@ namespace Restaurant.Core
         private List<Article> GetArticles()
         {
             string path = MyFile.GetFullNameInApplicationTree("Articles.csv");
-            string[] lines = File.ReadAllLines(path, Encoding.UTF8);
+            string[] lines = File.ReadAllLines(path, Encoding.Default);
             List<Article> result = new List<Article>();
 
             for (int i = 1; i < lines.Length; i++)
